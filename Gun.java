@@ -1,10 +1,12 @@
+import java.util.*;
+
 public class Gun {
   private String name;
-  private Bullet[] magazine;
+  private ArrayList<Ammunition> magazine;
 
   public Gun(String name) {
     this.name = name;
-    this.magazine = new Bullet[30];
+    this.magazine = new ArrayList<Ammunition>();
   }
 
   public String getName() {
@@ -12,42 +14,25 @@ public class Gun {
   }
 
   public int bulletCount() {
-    int count = 0;
-    for (Bullet bullet : magazine) {
-      if (bullet != null) {
-        count++;
-      }
-
-    }
-    return count;
+    return magazine.size();
   }
 
   public void fire() {
-    if (magazineEmpty()) {
-      
-    }
-    int bulletCount = bulletCount();
-    magazine[bulletCount -1] = null;
+    return magazine.clear;
 
   }
 
-  public void load(Bullet bullet) {
-    if (magazineFull()) {
-      
-    }
-    else {
-      int bulletCount = bulletCount(); 
-      magazine[bulletCount] = bullet;
-    }
+  public void load(Ammunition bullet) {
+   magazine.add(bullet);
   }
 
-  public boolean magazineEmpty() {
-    return bulletCount() == 0;
-  }
+  // public boolean magazineEmpty() {
+  //   return bulletCount() == 0;
+  // }
 
-  public boolean magazineFull() {
-    return bulletCount() == magazine.length;
-  }
+  // public boolean magazineFull() {
+  //   return magazine.size;
+  // }
 
   
 }
